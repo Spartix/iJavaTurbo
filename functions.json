@@ -1,0 +1,2558 @@
+[
+  {
+    "name": "abs",
+    "description": "Retourne la valeur absolue de l'entier donné.",
+    "return": "int | long | float | double",
+    "args": [
+      {
+        "name": "nb",
+        "type": "int | long | float | double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "acos",
+    "description": "Retourne le cosinus arc d'une valeur; l'angle retourné est dans la plage 0.0 à pi.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "actionPerformed",
+    "description": "Gestionnaire d'événements pour les actions.",
+    "return": "void",
+    "args": [
+      {
+        "name": "event",
+        "type": "ActionEvent",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "add",
+    "description": "Réalise l'addition binaire de deux opérandes.",
+    "return": "Binary",
+    "args": [
+      {
+        "name": "operand1",
+        "type": "Binary",
+        "required": true
+      },
+      {
+        "name": "operand2",
+        "type": "Binary",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "addButton",
+    "description": "Ajoute un bouton étiqueté avec un texte en bas de l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "text",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "addZone",
+    "description": "Ajoute une zone sur l'image avec du texte.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image | TransparentImage",
+        "required": true
+      },
+      {
+        "name": "text",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "width",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "height",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "and",
+    "description": "Calcule et retourne la configuration binaire résultante de l'opération ET bit à bit entre les deux opérandes.",
+    "return": "Binary",
+    "args": [
+      {
+        "name": "operand1",
+        "type": "Binary",
+        "required": true
+      },
+      {
+        "name": "operand2",
+        "type": "Binary",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "asin",
+    "description": "Retourne le sinus arc d'une valeur; l'angle retourné est dans la plage -pi/2 à pi/2.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "asr",
+    "description": "Calcule et retourne la configuration binaire résultante du décalage arithmétique à droite de l'opérande b1 de decalage positions.",
+    "return": "Binary",
+    "args": [
+      {
+        "name": "b1",
+        "type": "Binary",
+        "required": true
+      },
+      {
+        "name": "positions",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "assertArrayEquals",
+    "description": "Vérifie que les tableaux passés en paramètre sont égaux, c'est-à-dire qu'ils ont le même contenu.",
+    "return": "void",
+    "args": [
+      {
+        "name": "array1",
+        "type": "Object[]",
+        "required": true
+      },
+      {
+        "name": "array2",
+        "type": "Object[]",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "assertArrayNotEquals",
+    "description": "Vérifie que les tableaux passés en paramètre ne sont pas égaux.",
+    "return": "void",
+    "args": [
+      {
+        "name": "array1",
+        "type": "Object[]",
+        "required": true
+      },
+      {
+        "name": "array2",
+        "type": "Object[]",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "assertEquals",
+    "description": "Vérifie que les deux paramètres sont égaux et lève une AssertionException si ce n'est pas le cas.",
+    "return": "void",
+    "args": [
+      {
+        "name": "expected",
+        "type": "Object",
+        "required": true
+      },
+      {
+        "name": "actual",
+        "type": "Object",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "assertFalse",
+    "description": "Vérifie que le booléen passé en paramètre est faux et lève une AssertionException si ce n'est pas le cas.",
+    "return": "void",
+    "args": [
+      {
+        "name": "condition",
+        "type": "Boolean",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "assertGreaterThan",
+    "description": "Vérifie que la valeur testée est strictement supérieure à la valeur attendue.",
+    "return": "void",
+    "args": [
+      {
+        "name": "actual",
+        "type": "Comparable",
+        "required": true
+      },
+      {
+        "name": "expected",
+        "type": "Comparable",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "assertGreaterThanOrEqual",
+    "description": "Vérifie que la valeur testée est strictement supérieure ou égale à la valeur attendue.",
+    "return": "void",
+    "args": [
+      {
+        "name": "actual",
+        "type": "Comparable",
+        "required": true
+      },
+      {
+        "name": "expected",
+        "type": "Comparable",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "assertLessThan",
+    "description": "Vérifie que la valeur testée est strictement inférieure à la valeur attendue.",
+    "return": "void",
+    "args": [
+      {
+        "name": "actual",
+        "type": "Comparable",
+        "required": true
+      },
+      {
+        "name": "expected",
+        "type": "Comparable",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "assertLessThanOrEqual",
+    "description": "Vérifie que la valeur testée est strictement inférieure ou égale à la valeur attendue.",
+    "return": "void",
+    "args": [
+      {
+        "name": "actual",
+        "type": "Comparable",
+        "required": true
+      },
+      {
+        "name": "expected",
+        "type": "Comparable",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "assertNotEquals",
+    "description": "Vérifie que les deux paramètres sont différents et lève une AssertionException si ce n'est pas le cas.",
+    "return": "void",
+    "args": [
+      {
+        "name": "expected",
+        "type": "Object",
+        "required": true
+      },
+      {
+        "name": "actual",
+        "type": "Object",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "assertTrue",
+    "description": "Vérifie que le booléen passé en paramètre est vrai et lève une AssertionException si ce n'est pas le cas.",
+    "return": "void",
+    "args": [
+      {
+        "name": "condition",
+        "type": "Boolean",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "atan",
+    "description": "Retourne la tangente arc d'une valeur; l'angle retourné est dans la plage -pi/2 à pi/2.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "atan2",
+    "description": "Retourne l'angle theta de la conversion de coordonnées rectangulaires (x, y) à des coordonnées polaires (r, theta).",
+    "return": "double",
+    "args": [
+      {
+        "name": "y",
+        "type": "double",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "automaticRefresh",
+    "description": "Met à jour automatiquement l'affichage d'une image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image | TransparentImage",
+        "required": true
+      },
+      {
+        "name": "enabled",
+        "type": "boolean",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "background",
+    "description": "Définit la couleur de l'affichage du fond du texte.",
+    "return": "void",
+    "args": [
+      {
+        "name": "color",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "backward",
+    "description": "Déplace le curseur vers la gauche ou de n cases vers la gauche.",
+    "return": "void",
+    "args": [
+      {
+        "name": "n",
+        "type": "int",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "cbrt",
+    "description": "Retourne la racine cubique d'une valeur double.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "ceil",
+    "description": "Retourne la plus petite valeur double qui est supérieure ou égale à l'argument et égale à un entier mathématique.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "changeButton",
+    "description": "Modifie le texte affiché sur un des boutons d'une image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "oldText",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "newText",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "charAt",
+    "description": "Retourne le caractère de la chaîne s situé à l'indice idx.",
+    "return": "char",
+    "args": [
+      {
+        "name": "s",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "idx",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "charToInt",
+    "description": "Convertit un chiffre (caractère décimal) vers sa valeur numérique entière.",
+    "return": "int",
+    "args": [
+      {
+        "name": "c",
+        "type": "char",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "clearBOL",
+    "description": "Efface la ligne depuis le début de la ligne jusqu'au curseur.",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "clearEOL",
+    "description": "Efface la ligne depuis la position jusqu'à la fin de la ligne.",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "clearLine",
+    "description": "Efface l'ensemble du contenu de la ligne courante.",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "clearScreen",
+    "description": "Efface l'ensemble de l'écran et repositionne le curseur en (1, 1).",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "close",
+    "description": "Ferme l'image ou l'image transparente.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "columnCount",
+    "description": "Retourne le nombre de colonnes d'un fichier CSV.",
+    "return": "int",
+    "args": [
+      {
+        "name": "csvFile",
+        "type": "CSVFile",
+        "required": true
+      },
+      {
+        "name": "index",
+        "type": "int",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "compare",
+    "description": "Compare deux chaînes de caractères selon l'ordre lexicographique.",
+    "return": "int",
+    "args": [
+      {
+        "name": "str1",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "str2",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "copyAndResize",
+    "description": "Copie et redimensionne une image.",
+    "return": "Image",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "newName",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "width",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "height",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "copySign",
+    "description": "Retourne le premier argument flottant avec le signe du second argument flottant.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value1",
+        "type": "double",
+        "required": true
+      },
+      {
+        "name": "value2",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "cos",
+    "description": "Retourne le cosinus trigonométrique d'un angle.",
+    "return": "double",
+    "args": [
+      {
+        "name": "angle",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "cosh",
+    "description": "Retourne le cosinus hyperbolique d'une valeur double.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "curp",
+    "description": "Restaure la position sauvegardée du curseur.",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "cursor",
+    "description": "Positionne le curseur aux coordonnées (ligne, colonne).",
+    "return": "void",
+    "args": [
+      {
+        "name": "line",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "column",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "cusp",
+    "description": "Sauvegarde la position courante du curseur.",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "delay",
+    "description": "Met en pause l'exécution pendant un temps spécifié.",
+    "return": "void",
+    "args": [
+      {
+        "name": "milliseconds",
+        "type": "long",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "down",
+    "description": "Déplace le curseur vers le bas.",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "down",
+    "description": "Déplace le curseur de n lignes vers le bas.",
+    "return": "void",
+    "args": [
+      {
+        "name": "n",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "drawImage",
+    "description": "Dessine une image à des coordonnées spécifiées.",
+    "return": "void",
+    "args": [
+      {
+        "name": "srcImage",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "destImage",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "opaque",
+        "type": "boolean",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "drawLine",
+    "description": "Dessine une ligne entre deux points.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x1",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y1",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "x2",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y2",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "drawOval",
+    "description": "Dessine un ovale à des coordonnées spécifiées.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "width",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "height",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "drawRect",
+    "description": "Dessine un rectangle à des coordonnées spécifiées.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "width",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "height",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "drawString",
+    "description": "Dessine une chaîne de caractères à des coordonnées spécifiées.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "text",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "dropCarry",
+    "description": "Permet d'extraire la partie fixe (hors retenue) du résultat d'une addition.",
+    "return": "void",
+    "args": [
+      {
+        "name": "binary",
+        "type": "Binary",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "enableKeyTypedInConsole",
+    "description": "Active ou désactive la possibilité de capturer les touches manipulées par l'utilisateur.",
+    "return": "void",
+    "args": [
+      {
+        "name": "enabled",
+        "type": "boolean",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "equals",
+    "description": "Teste l'égalité de deux chaînes de caractères.",
+    "return": "boolean",
+    "args": [
+      {
+        "name": "str1",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "str2",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "error",
+    "description": "Affiche un message d'erreur.",
+    "return": "void",
+    "args": [
+      {
+        "name": "message",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "exp",
+    "description": "Retourne le nombre d'Euler élevé à la puissance d'une valeur double.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "expm1",
+    "description": "Retourne e^x - 1.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "fill",
+    "description": "Remplit l'image avec une couleur ou un motif.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "fill",
+    "description": "Remplit l'image avec une couleur spécifiée.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "color",
+        "type": "extensions.RGBColor",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "fill",
+    "description": "Remplit l'image avec une couleur spécifiée.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "value",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "fillOval",
+    "description": "Remplit un ovale dans l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "width",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "height",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "fillRect",
+    "description": "Remplit un rectangle dans l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "width",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "height",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "floor",
+    "description": "Retourne la valeur double la plus grande qui est inférieure ou égale à l'argument.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "forward",
+    "description": "Déplace le curseur vers la droite.",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "forward",
+    "description": "Déplace le curseur de n cases vers la droite.",
+    "return": "void",
+    "args": [
+      {
+        "name": "n",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "get",
+    "description": "Récupère une partie de l'image aux coordonnées spécifiées.",
+    "return": "Image",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "get",
+    "description": "Récupère une partie de l'image transparente aux coordonnées spécifiées.",
+    "return": "TransparentImage",
+    "args": [
+      {
+        "name": "image",
+        "type": "TransparentImage",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getAllFilesFromCurrentDirectory",
+    "description": "Récupère tous les fichiers du répertoire courant.",
+    "return": "List<File>",
+    "args": []
+  },
+  {
+    "name": "getAllFilesFromDirectory",
+    "description": "Récupère tous les fichiers d'un répertoire spécifié.",
+    "return": "List<File>",
+    "args": [
+      {
+        "name": "directory",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getAllFontNames",
+    "description": "Récupère tous les noms de polices disponibles.",
+    "return": "List<String>",
+    "args": []
+  },
+  {
+    "name": "getCarry",
+    "description": "Permet d'isoler la retenue provoquée par une addition.",
+    "return": "Binary",
+    "args": [
+      {
+        "name": "binary",
+        "type": "Binary",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getCell",
+    "description": "Récupère la cellule d'un fichier CSV à des coordonnées spécifiées.",
+    "return": "String",
+    "args": [
+      {
+        "name": "csvFile",
+        "type": "CSVFile",
+        "required": true
+      },
+      {
+        "name": "row",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "column",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getColumns",
+    "description": "Récupère le nombre de colonnes d'une image.",
+    "return": "int",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getColumns",
+    "description": "Récupère le nombre de colonnes d'une image transparente.",
+    "return": "int",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getExponent",
+    "description": "Retourne l'exposant non biaisé pour un double.",
+    "return": "int",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getExponent",
+    "description": "Retourne l'exposant non biaisé pour un float.",
+    "return": "int",
+    "args": [
+      {
+        "name": "value",
+        "type": "float",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getGridColumns",
+    "description": "Récupère le nombre de colonnes dans une grille d'image.",
+    "return": "int",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getGridColumns",
+    "description": "Récupère le nombre de colonnes dans une grille d'image transparente.",
+    "return": "int",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getGridLines",
+    "description": "Récupère les lignes de la grille d'image.",
+    "return": "int",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getGridLines",
+    "description": "Récupère les lignes de la grille d'image transparente.",
+    "return": "int",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getHeight",
+    "description": "Retourne la hauteur en pixels de l'image.",
+    "return": "int",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getHeight",
+    "description": "Retourne la hauteur en pixels de l'image transparente.",
+    "return": "int",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getLines",
+    "description": "Récupère les lignes d'une image.",
+    "return": "int",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getLines",
+    "description": "Récupère les lignes d'une image transparente.",
+    "return": "int",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getName",
+    "description": "Retourne le nom associé à une image.",
+    "return": "String",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getName",
+    "description": "Retourne le nom associé à une image transparente.",
+    "return": "String",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getStringLength",
+    "description": "Retourne la longueur d'une chaîne dans l'image.",
+    "return": "int",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "string",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getStringLength",
+    "description": "Retourne la longueur d'une chaîne dans une image transparente.",
+    "return": "int",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      },
+      {
+        "name": "string",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getTime",
+    "description": "Mesure le temps qui s'écoule.",
+    "return": "long",
+    "args": []
+  },
+  {
+    "name": "getWidth",
+    "description": "Retourne la largeur en pixels de l'image.",
+    "return": "int",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "getWidth",
+    "description": "Retourne la largeur en pixels de l'image transparente.",
+    "return": "int",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "hide",
+    "description": "Masque le curseur.",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "hide",
+    "description": "Masque l'image spécifiée.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "hide",
+    "description": "Masque l'image transparente spécifiée.",
+    "return": "void",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "hideTextField",
+    "description": "Masque le champ de texte d'une image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "hypot",
+    "description": "Retourne la racine carrée de la somme des carrés des deux arguments.",
+    "return": "double",
+    "args": [
+      {
+        "name": "x",
+        "type": "double",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "IEEEremainder",
+    "description": "Calcule l'opération de reste sur deux arguments selon la norme IEEE 754.",
+    "return": "double",
+    "args": [
+      {
+        "name": "x",
+        "type": "double",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "length",
+    "description": "Retourne le nombre de caractères que contient une chaîne de caractères ou la taille d'un tableau.",
+    "return": "int",
+    "args": [
+      {
+        "name": "str",
+        "type": "String|Object",
+        "required": true
+      },
+      {
+        "name": "dim",
+        "type": "int",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "loadCSV",
+    "description": "Charge un fichier CSV.",
+    "return": "void",
+    "args": [
+      {
+        "name": "filePath",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "delimiter",
+        "type": "char",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "log",
+    "description": "Retourne le logarithme naturel (base e) d'une valeur double.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "log10",
+    "description": "Retourne le logarithme en base 10 d'une valeur double.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "log1p",
+    "description": "Retourne le logarithme naturel de la somme de l'argument et 1.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "max",
+    "description": "Retourne la valeur maximale parmi les arguments.",
+    "return": "int|float|double|long",
+    "args": [
+      {
+        "name": "a",
+        "type": "int|float|double|long",
+        "required": true
+      },
+      {
+        "name": "b",
+        "type": "int|float|double|long",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "min",
+    "description": "Retourne la valeur minimale parmi les arguments.",
+    "return": "int|float|double|long",
+    "args": [
+      {
+        "name": "a",
+        "type": "int|float|double|long",
+        "required": true
+      },
+      {
+        "name": "b",
+        "type": "int|float|double|long",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "nextAfter",
+    "description": "Retourne le nombre à virgule flottante adjacent au premier argument dans la direction du second argument.",
+    "return": "double|float",
+    "args": [
+      {
+        "name": "a",
+        "type": "double|float",
+        "required": true
+      },
+      {
+        "name": "b",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "nextUp",
+    "description": "Retourne la valeur à virgule flottante adjacente dans la direction de l'infini positif.",
+    "return": "double|float",
+    "args": [
+      {
+        "name": "value",
+        "type": "double|float",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "or",
+    "description": "Calcule et retourne la configuration binaire résultante de l'opération OU bit à bit entre les deux opérandes.",
+    "return": "Binary",
+    "args": [
+      {
+        "name": "b1",
+        "type": "Binary",
+        "required": true
+      },
+      {
+        "name": "b2",
+        "type": "Binary",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "play",
+    "description": "Joue le son passé en paramètre.",
+    "return": "void",
+    "args": [
+      {
+        "name": "sound",
+        "type": "Sound",
+        "required": true
+      },
+      {
+        "name": "background",
+        "type": "boolean",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "playContinuously",
+    "description": "Joue le son en boucle.",
+    "return": "void",
+    "args": [
+      {
+        "name": "sound",
+        "type": "Sound",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "playMP3",
+    "description": "Joue un fichier MP3 avec la possibilité d'exécuter en tâche de fond.",
+    "return": "void",
+    "args": [
+      {
+        "name": "filePath",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "background",
+        "type": "boolean",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "playSound",
+    "description": "Joue un son (mp3, wav, au).",
+    "return": "void",
+    "args": [
+      {
+        "name": "filePath",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "background",
+        "type": "boolean",
+        "required": false
+      }
+    ]
+  },
+  {
+    "name": "pow",
+    "description": "Retourne la puissance réelle (double) d'un réel (double).",
+    "return": "double",
+    "args": [
+      {
+        "name": "base",
+        "type": "double",
+        "required": true
+      },
+      {
+        "name": "exponent",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "print",
+    "description": "Affiche une valeur ou une chaîne de caractères.",
+    "return": "void",
+    "args": [
+      {
+        "name": "value",
+        "type": "String|int|long|float|double|char|boolean|Object",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "println",
+    "description": "Affiche une valeur ou une chaîne de caractères, puis passe à la ligne.",
+    "return": "void",
+    "args": [
+      {
+        "name": "value",
+        "type": "String|int|long|float|double|char|boolean|Object",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "random",
+    "description": "Retourne un réel tiré aléatoirement dans l'intervalle [0.0, 1.0[.",
+    "return": "double",
+    "args": []
+  },
+  {
+    "name": "randomANSIColor",
+    "description": "Cette fonction retourne aléatoirement une chaîne de caractère représentant une couleur (parmi les couleurs définies dans le tableau ANSI_COLORS).",
+    "return": "String",
+    "args": []
+  },
+  {
+    "name": "randomColor",
+    "description": "Cette primitive tire aléatoirement une couleur RGB.",
+    "return": "Color",
+    "args": []
+  },
+  {
+    "name": "read",
+    "description": "Lit un fichier et retourne son contenu.",
+    "return": "void",
+    "args": [
+      {
+        "name": "file",
+        "type": "extensions.File",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "readBinary",
+    "description": "Demande la saisie d'une ligne à l'utilisateur et interprète cette saisie pour initialiser la configuration binaire créée.",
+    "return": "Binary",
+    "args": []
+  },
+  {
+    "name": "readBinary",
+    "description": "Demande la saisie d'une ligne à l'utilisateur et interprète cette saisie pour initialiser la configuration binaire créée, de format fixe.",
+    "return": "Binary",
+    "args": [
+      {
+        "name": "fixedFormat",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "readChar",
+    "description": "Demande la saisie d'un caractère.",
+    "return": "char",
+    "args": []
+  },
+  {
+    "name": "readChar",
+    "description": "Demande la saisie en un temps limité d'un caractère.",
+    "return": "char",
+    "args": [
+      {
+        "name": "timeout",
+        "type": "long",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "readDouble",
+    "description": "Demande la saisie d'une valeur réelle (double précision).",
+    "return": "double",
+    "args": []
+  },
+  {
+    "name": "readDouble",
+    "description": "Demande la saisie en un temps limité d'une valeur réelle (double précision).",
+    "return": "double",
+    "args": [
+      {
+        "name": "timeout",
+        "type": "long",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "readFloat",
+    "description": "Demande la saisie d'une valeur réelle (simple précision).",
+    "return": "float",
+    "args": []
+  },
+  {
+    "name": "readFloat",
+    "description": "Demande la saisie en un temps limité d'une valeur réelle (simple précision).",
+    "return": "float",
+    "args": [
+      {
+        "name": "timeout",
+        "type": "long",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "readInt",
+    "description": "Demande la saisie d'une valeur entière.",
+    "return": "int",
+    "args": []
+  },
+  {
+    "name": "readInt",
+    "description": "Demande la saisie en un temps limité d'une valeur entière.",
+    "return": "int",
+    "args": [
+      {
+        "name": "timeout",
+        "type": "long",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "readLong",
+    "description": "Demande la saisie d'une valeur entière 'long'.",
+    "return": "long",
+    "args": []
+  },
+  {
+    "name": "readLong",
+    "description": "Demande la saisie en un temps limité d'une valeur entière 'long'.",
+    "return": "long",
+    "args": [
+      {
+        "name": "timeout",
+        "type": "long",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "readString",
+    "description": "Demande la saisie d'une chaîne de caractères.",
+    "return": "String",
+    "args": []
+  },
+  {
+    "name": "readString",
+    "description": "Demande la saisie en un temps limité d'une chaîne de caractères.",
+    "return": "String",
+    "args": [
+      {
+        "name": "timeout",
+        "type": "long",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "removeAllButtons",
+    "description": "Supprime tous les boutons de l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "removeAllButtons",
+    "description": "Supprime tous les boutons de l'image transparente.",
+    "return": "void",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "removeButton",
+    "description": "Supprime le bouton portant un certain label dans l'image passée en paramètre.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "label",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "removeButton",
+    "description": "Supprime le bouton portant un certain label dans l'image transparente.",
+    "return": "void",
+    "args": [
+      {
+        "name": "transparentImage",
+        "type": "TransparentImage",
+        "required": true
+      },
+      {
+        "name": "label",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "reset",
+    "description": "Réinitialise la console (utile lorsque vous jouez avec les couleurs du texte !).",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "rgb",
+    "description": "Crée une couleur à partir de trois valeurs RGB.",
+    "return": "Color",
+    "args": [
+      {
+        "name": "red",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "green",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "blue",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "round",
+    "description": "Retourne le long le plus proche de l'argument.",
+    "return": "long",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "round",
+    "description": "Retourne l'entier le plus proche de l'argument.",
+    "return": "int",
+    "args": [
+      {
+        "name": "value",
+        "type": "float",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "rowCount",
+    "description": "Retourne le nombre de lignes d'un fichier CSV.",
+    "return": "int",
+    "args": [
+      {
+        "name": "csvFile",
+        "type": "CSVFile",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "saveCSV",
+    "description": "Sauvegarde un tableau 2D de chaînes dans un fichier CSV.",
+    "return": "void",
+    "args": [
+      {
+        "name": "data",
+        "type": "String[][]",
+        "required": true
+      },
+      {
+        "name": "fileName",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "saveCSV",
+    "description": "Sauvegarde un tableau 2D de chaînes dans un fichier CSV en spécifiant un séparateur.",
+    "return": "void",
+    "args": [
+      {
+        "name": "data",
+        "type": "String[][]",
+        "required": true
+      },
+      {
+        "name": "fileName",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "separator",
+        "type": "char",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "scalb",
+    "description": "Retourne d × 2^scaleFactor pour un double.",
+    "return": "double",
+    "args": [
+      {
+        "name": "d",
+        "type": "double",
+        "required": true
+      },
+      {
+        "name": "scaleFactor",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "scalb",
+    "description": "Retourne f × 2^scaleFactor pour un float.",
+    "return": "float",
+    "args": [
+      {
+        "name": "f",
+        "type": "float",
+        "required": true
+      },
+      {
+        "name": "scaleFactor",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "set",
+    "description": "Modifie la couleur d'un pixel à une position donnée dans l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "color",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "set",
+    "description": "Modifie la couleur d'un pixel à une position donnée dans l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "rgbColor",
+        "type": "extensions.RGBColor",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "set",
+    "description": "Modifie un pixel à une position donnée dans l'image avec une autre image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "sourceImage",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "setColor",
+    "description": "Change la couleur d'une image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "rgbColor",
+        "type": "extensions.RGBColor",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "setColor",
+    "description": "Change la couleur d'un pixel à une position donnée dans l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "x",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "y",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "rgbColor",
+        "type": "extensions.RGBColor",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "setFocus",
+    "description": "Définit le focus sur une image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "focused",
+        "type": "boolean",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "setGrid",
+    "description": "Définit une grille pour l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "columns",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "rows",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "setMessage",
+    "description": "Affiche un message sur l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "message",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "setName",
+    "description": "Permet de donner un nom à une image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "name",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "setNewFont",
+    "description": "Définit une nouvelle police pour l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "fontFamily",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "fontStyle",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "fontSize",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "setStroke",
+    "description": "Définit l'épaisseur du trait pour l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "strokeWidth",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "setText",
+    "description": "Définit le texte à afficher sur l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      },
+      {
+        "name": "text",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "show",
+    "description": "Affiche l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "showTextField",
+    "description": "Affiche un champ de texte sur l'image.",
+    "return": "void",
+    "args": [
+      {
+        "name": "image",
+        "type": "Image",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "signum",
+    "description": "Retourne la fonction signe de l'argument.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "signum",
+    "description": "Retourne la fonction signe de l'argument.",
+    "return": "float",
+    "args": [
+      {
+        "name": "value",
+        "type": "float",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "sin",
+    "description": "Retourne le sinus d'un angle.",
+    "return": "double",
+    "args": [
+      {
+        "name": "angle",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "sinh",
+    "description": "Retourne le sinus hyperbolique d'une valeur double.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "sqrt",
+    "description": "Retourne la racine carrée positive d'un nombre réel.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "startAutoUpdate",
+    "description": "Démarre la mise à jour automatique.",
+    "return": "void",
+    "args": [
+      {
+        "name": "interval",
+        "type": "long",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "stop",
+    "description": "Arrête la lecture du son.",
+    "return": "void",
+    "args": [
+      {
+        "name": "sound",
+        "type": "Sound",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "stopAutoUpdate",
+    "description": "Arrête la mise à jour automatique.",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "stringToDouble",
+    "description": "Convertit une chaîne en valeur numérique de type double.",
+    "return": "double",
+    "args": [
+      {
+        "name": "input",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "stringToInt",
+    "description": "Convertit une chaîne en valeur numérique de type entier.",
+    "return": "int",
+    "args": [
+      {
+        "name": "input",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "substring",
+    "description": "Retourne une sous-chaîne d'une chaîne donnée.",
+    "return": "String",
+    "args": [
+      {
+        "name": "input",
+        "type": "String",
+        "required": true
+      },
+      {
+        "name": "start",
+        "type": "int",
+        "required": true
+      },
+      {
+        "name": "end",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "tan",
+    "description": "Retourne la tangente trigonométrique d'un angle.",
+    "return": "double",
+    "args": [
+      {
+        "name": "angle",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "tanh",
+    "description": "Retourne la tangente hyperbolique d'une valeur double.",
+    "return": "double",
+    "args": [
+      {
+        "name": "value",
+        "type": "double",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "text",
+    "description": "Défini la couleur de l'affichage du texte.",
+    "return": "void",
+    "args": [
+      {
+        "name": "text",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "toLowerCase",
+    "description": "Transforme l'ensemble des caractères d'une chaîne en minuscules.",
+    "return": "String",
+    "args": [
+      {
+        "name": "input",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "toUpperCase",
+    "description": "Transforme l'ensemble des caractères d'une chaîne en majuscules.",
+    "return": "String",
+    "args": [
+      {
+        "name": "input",
+        "type": "String",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "up",
+    "description": "Déplace le curseur vers le haut.",
+    "return": "void",
+    "args": []
+  },
+  {
+    "name": "up",
+    "description": "Déplace le curseur de n lignes vers le haut.",
+    "return": "void",
+    "args": [
+      {
+        "name": "n",
+        "type": "int",
+        "required": true
+      }
+    ]
+  },
+  {
+    "name": "xor",
+    "description": "Calcule et retourne la configuration binaire résultante de l'opération OU (inclusif) bit à bit entre les deux opérandes.",
+    "return": "Binary",
+    "args": [
+      {
+        "name": "a",
+        "type": "Binary",
+        "required": true
+      },
+      {
+        "name": "b",
+        "type": "Binary",
+        "required": true
+      }
+    ]
+  }
+]

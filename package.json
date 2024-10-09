@@ -1,0 +1,90 @@
+{
+  "name": "ijava-extension",
+  "displayName": "iJava Extension",
+  "description": "Extension ijava pour les cours de dev",
+  "version": "0.0.1",
+  "publisher": "Ilies",
+  "engines": {
+    "vscode": "^1.50.0"
+  },
+  "activationEvents": [
+    "onLanguage:java"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "java",
+        "extensions": [
+          ".java"
+        ],
+        "aliases": [
+          "Java",
+          "Java"
+        ]
+      }
+    ],
+    "commands": [
+      {
+        "command": "extension.insertPgClass",
+        "title": "Insert Class"
+      },
+      {
+        "command": "extension.compileAndRun",
+        "title": "Compile and Run"
+      },
+      {
+        "command": "extension.toggleComment",
+        "title": "Commentaires"
+      },
+      {
+        "command": "extension.CustomCommand",
+        "title": "Custom commands"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.insertPgClass",
+        "key": "ctrl+alt+u",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.compileAndRun",
+        "key": "ctrl+alt+e",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.toggleComment",
+        "key": "ctrl+alt+/",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.CustomCommand",
+        "key": "ctrl+alt+c",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "iJava Extension Settings",
+      "properties": {
+        "ijava.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable iJava extension features."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./out/compile.js"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0",
+    "vscode": "^1.50.0",
+    "@types/node": "^14.0.0"
+  }
+}
