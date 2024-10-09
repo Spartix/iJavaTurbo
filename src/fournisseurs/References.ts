@@ -9,44 +9,50 @@ export const provider = vscode.languages.registerDefinitionProvider("java", {
     const definitions: vscode.Location[] = [];
     const text = document.getText();
 
-    // Regex pour matcher uniquement les fonctions définies par l'utilisateur
-    const funcRegex = new RegExp(`\\b${word}\\s*\\(\\s*\\)\\s*{`, "g");
+    // Regex pour matcher les decla de fonctions
+    const funcRegex = new RegExp(`\\b${word}\\s*\\(.*?\\)\\s*{`, "g");
     let match;
 
-    // Trouver les définitions de fonctions
+    // Trouver les def de fonctions
     while ((match = funcRegex.exec(text))) {
-      const start = document.positionAt(match.index);
+      const startIndex = match.index;
+      const startPosition = document.positionAt(startIndex);
+
+      // Generate la loc pour la fonction
       definitions.push(
         new vscode.Location(
           document.uri,
           new vscode.Range(
-            start.line,
-            start.character,
-            start.line,
-            start.character + match[0].length
+            startPosition.line,
+            startPosition.character, // Start
+            startPosition.line,
+            startPosition.character + match[0].length // end
           )
         )
       );
     }
 
-    // Recherche des définitions de variables
-    const varRegex = new RegExp(`\\b${word}\\b(?!\\s*\\()`, "g"); // Exclut les fonctions
+    // Regex pour les dec de var
+    const varRegex = new RegExp(`\\b(${word})\\s*=[^;]*;`, "g"); // Exclut les fonctions
     while ((match = varRegex.exec(text))) {
-      const start = document.positionAt(match.index);
+      const startIndex = match.index;
+      const startPosition = document.positionAt(startIndex);
+
+      // loc de la var
       definitions.push(
         new vscode.Location(
           document.uri,
           new vscode.Range(
-            start.line,
-            start.character,
-            start.line,
-            start.character + word.length
+            startPosition.line,
+            startPosition.character, // start
+            startPosition.line,
+            startPosition.character + match[0].length // end
           )
         )
       );
     }
 
-    // Retourner les définitions trouvées
+    //retour des def
     return definitions.length > 0 ? definitions : null;
   },
 });
