@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { getFileInfo } from "../utils/getFileInfos";
 
 // Commande pour insérer automatiquement la classe
 export let disposableInsertClass = vscode.commands.registerCommand(
@@ -8,18 +9,7 @@ export let disposableInsertClass = vscode.commands.registerCommand(
     if (editor) {
       editor
         .edit((editBuilder) => {
-          const fileDirectory = editor.document.fileName;
-          let fileName = fileDirectory;
-          if (fileName.includes("/")) {
-            fileName = fileName.split("/")[fileName.split("/").length - 1];
-          }
-          if (fileName.includes("\\")) {
-            fileName = fileName.split("\\")[fileName.split("\\").length - 1];
-          }
-          const extension = fileName.split(".")[fileName.split(".").length - 1];
-          if (fileName.includes(".")) {
-            fileName = fileName.split(".")[fileName.split(".").length - 2];
-          }
+          const fileName = getFileInfo(editor).name;
           const position = editor.selection.active;
           editBuilder.insert(
             position,

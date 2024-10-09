@@ -1,5 +1,5 @@
 import * as vscode from "vscode";
-import { disposableCompileAndRun } from "./fournisseurs/CompileRun";
+import { disposableCompileAndRun } from "./commands/CompileRun";
 import { disposableInsertClass } from "./commands/InsertClass";
 import { completionProvider } from "./complet";
 import { provider } from "./fournisseurs/References";
