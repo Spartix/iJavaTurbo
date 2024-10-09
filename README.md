@@ -3,6 +3,7 @@
 - Fournit des suggestions et de l'auto-complétion.
 - Affiche la signature des fonctions.
 - Permet de retourner à la définition d'une fonction créée par l'utilisateur.
+- Informe lorsque une variable n'a pas été initialisée.
 
 ## Raccourcis clavier
 
