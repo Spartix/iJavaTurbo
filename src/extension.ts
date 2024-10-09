@@ -11,29 +11,24 @@ import { updateDiagnostics } from "./fournisseurs/Correction";
 export function activate(context: vscode.ExtensionContext) {
   //lorsque l'extension est installer ca demande un reload
 
-  // const config = vscode.workspace.getConfiguration("mon-extension");
-  // const isFirstInstall = config.get("firstInstall", true);
+  const config = vscode.workspace.getConfiguration("iJavaTurbo");
+  const isFirstInstall = config.get("firstInstall", true);
 
-  // if (isFirstInstall) {
-  //   vscode.window
-  //     .showInformationMessage(
-  //       "L'extension a été installée avec succès. Redémarrez VS Code pour appliquer les modifications.",
-  //       { modal: true },
-  //       "Redémarrer"
-  //     )
-  //     .then( (selection) => {
+  if (isFirstInstall) {
+    vscode.window
+      .showInformationMessage(
+        "L'extension a été installée avec succès. Redémarrez VS Code pour appliquer les modifications.",
+        { modal: true },
+        "Redémarrer"
+      )
+      .then((selection) => {
+        config.update("firstInstall", false, vscode.ConfigurationTarget.Global);
 
-  //        config.update(
-  //         "firstInstall",
-  //         false,
-  //         vscode.ConfigurationTarget.Global
-  //       );
-
-  //       if (selection === "Redémarrer") {
-  //          vscode.commands.executeCommand("workbench.action.reloadWindow");
-  //       }
-  //     });
-  // }
+        if (selection === "Redémarrer") {
+          vscode.commands.executeCommand("workbench.action.reloadWindow");
+        }
+      });
+  }
 
   context.subscriptions.push(hoverProvider);
   context.subscriptions.push(provider);
