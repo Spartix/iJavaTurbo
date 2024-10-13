@@ -6,9 +6,16 @@ import { provider } from "./fournisseurs/References";
 import { commentline } from "./commands/Comment";
 import { execCustomCommand } from "./commands/customsCommands";
 import { hoverProvider } from "./fournisseurs/FunctionInfos";
-import { updateDiagnostics } from "./fournisseurs/Correction";
+import {
+  provideCompletionItems,
+  updateDiagnostics,
+} from "./fournisseurs/Correction";
+import { addPoints } from "./fournisseurs/EndLines";
 
 export function activate(context: vscode.ExtensionContext) {
+  const isJavaFile = (document: vscode.TextDocument) =>
+    document.languageId === "java";
+
   //lorsque l'extension est installer ca demande un reload
 
   const config = vscode.workspace.getConfiguration("iJavaTurbo");
@@ -37,19 +44,50 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(completionProvider);
   context.subscriptions.push(execCustomCommand);
   context.subscriptions.push(commentline);
-  vscode.window.showInformationMessage("iJava extension activated");
+  //vscode.window.showInformationMessage("iJava extension activated");
 
-  // Diagnostic pour les erreurs
+  context.subscriptions.push(
+    vscode.languages.registerCompletionItemProvider(
+      { language: "java" },
+      {
+        provideCompletionItems,
+      }
+    )
+  );
+
+  // Diagnostic pour les erreurs lors des changements de texte dans le document
   context.subscriptions.push(
     vscode.workspace.onDidChangeTextDocument((event) => {
-      updateDiagnostics(event.document);
+      if (isJavaFile(event.document)) {
+        updateDiagnostics(event.document);
+      }
     })
   );
 
-  // Initialiser les diagnostics au démarrage
+  // Diagnostic lors de l'ouverture d'un nouveau document
+  context.subscriptions.push(
+    vscode.workspace.onDidOpenTextDocument((document) => {
+      if (isJavaFile(document)) {
+        updateDiagnostics(document);
+      }
+    })
+  );
+
+  // Initialiser les diagnostics pour tous les documents ouverts au démarrage de l'extension
   vscode.workspace.textDocuments.forEach((doc) => {
-    updateDiagnostics(doc);
+    if (isJavaFile(doc)) {
+      updateDiagnostics(doc);
+    }
   });
+
+  // quand save add les ;
+  context.subscriptions.push(
+    vscode.workspace.onDidSaveTextDocument((document) => {
+      if (isJavaFile(document)) {
+        addPoints(document);
+      }
+    })
+  );
 }
 
 export function deactivate() {}

@@ -3,25 +3,41 @@ import * as vscode from "vscode";
 const diagnosticCollection =
   vscode.languages.createDiagnosticCollection("java");
 
-// Fonction pour vérifier l'initialisation des variables
+let initializedVariables: Set<string> = new Set(); // Liste des variables init
+
+// Fonction pour vérifier l init des variables
 export function checkVariableInitialization(
   document: vscode.TextDocument
 ): vscode.Diagnostic[] {
   const diagnostics: vscode.Diagnostic[] = [];
   const text = document.getText();
-  const variableRegex = /\b(\w+)\s*=\s*[^;]*;/g; // Regex pour matcher les déclarations de variables
-  const usedVariableRegex = /\b(\w+)\b(?!\s*=\s*[^;]*;)/g; // Regex pour matcher l'utilisation des variables
 
-  const declaredVariables: Set<string> = new Set();
+  // Regex pour matcher les déclarations de variables
+  const variableRegex = /\b(\w+)\s*=\s*[^;]*;/g;
+  // Regex pour matcher les paramètres de fonction
+  const functionParamRegex = /\b(\w+)\s+(\w+)\s*\(([^)]*)\)/g;
+  // Regex pour matcher l'utilisation des variables
+  const usedVariableRegex = /\b(\w+)\b(?!\s*=\s*[^;]*;)/g;
 
-  // Trouver les variables initialisées
+  initializedVariables.clear();
+
   let match;
-  while ((match = variableRegex.exec(text))) {
-    const variableName = match[1];
-    declaredVariables.add(variableName);
+  while ((match = functionParamRegex.exec(text))) {
+    const params = match[3].split(",");
+    params.forEach((param) => {
+      const paramName = param.trim().split(/\s+/).pop();
+      if (paramName) {
+        initializedVariables.add(paramName);
+      }
+    });
   }
 
-  // Vérifier si une variable est utilisée
+  // Trouver les variables init
+  while ((match = variableRegex.exec(text))) {
+    const variableName = match[1];
+    initializedVariables.add(variableName);
+  }
+
   const lines = text.split("\n");
   for (let lineNumber = 0; lineNumber < lines.length; lineNumber++) {
     const line = lines[lineNumber].trim();
@@ -55,7 +71,12 @@ export function checkVariableInitialization(
       "catch",
       "finally",
     ];
-    if (keywords.some((keyword) => line.startsWith(keyword))) {
+    if (
+      keywords.some((keyword) => line.startsWith(keyword)) ||
+      keywords.some((keyword) =>
+        line.replace(/ /g, "").startsWith("}" + keyword)
+      )
+    ) {
       continue;
     }
 
@@ -69,9 +90,8 @@ export function checkVariableInitialization(
     while ((usedMatch = usedVariableRegex.exec(line))) {
       const usedVariableName = usedMatch[1];
 
-      // Vérifiez si la variable est déclarée dans les déclarations ou si c'est une méthode
       if (
-        !declaredVariables.has(usedVariableName) &&
+        !initializedVariables.has(usedVariableName) &&
         !text.includes(` ${usedVariableName}(`)
       ) {
         const startPosition = new vscode.Position(lineNumber, usedMatch.index);
@@ -80,10 +100,9 @@ export function checkVariableInitialization(
           usedMatch.index + usedVariableName.length
         );
 
-        // Diagnostic si la variable n'est jamais initialisée
         const diagnostic = new vscode.Diagnostic(
           new vscode.Range(startPosition, endPosition),
-          "variable not init",
+          `Variable "${usedVariableName}" not initialized`,
           vscode.DiagnosticSeverity.Warning // erreur
         );
 
@@ -95,7 +114,25 @@ export function checkVariableInitialization(
   return diagnostics;
 }
 
-// Fonction pour mettre à jour les diagnostics
+// Fonction pour ajouter des suggestions de complétion
+export function provideCompletionItems(
+  document: vscode.TextDocument,
+  position: vscode.Position
+): vscode.CompletionItem[] {
+  const completionItems: vscode.CompletionItem[] = [];
+
+  // Ajouter chaque variable initialisée à la complétion
+  initializedVariables.forEach((variable) => {
+    const completionItem = new vscode.CompletionItem(
+      variable,
+      vscode.CompletionItemKind.Variable
+    );
+    completionItems.push(completionItem);
+  });
+
+  return completionItems;
+}
+
 export function updateDiagnostics(document: vscode.TextDocument) {
   if (document.languageId === "java") {
     const diagnostics = checkVariableInitialization(document);

@@ -1,5 +1,3 @@
-import * as path from "path";
-import * as fs from "fs";
 import { proutedefonctions } from "../interfaces/functionsInterface";
 //load les fonctions leurs descriptions etc
 let functionsData: proutedefonctions[];
