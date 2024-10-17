@@ -5,7 +5,7 @@ const diagnosticCollection =
 
 let initializedVariables: Set<string> = new Set(); // Liste des variables init
 
-// Fonction pour vérifier l init des variables
+// Fonction pour vérifier l'init des variables
 export function checkVariableInitialization(
   document: vscode.TextDocument
 ): vscode.Diagnostic[] {
@@ -32,7 +32,7 @@ export function checkVariableInitialization(
     });
   }
 
-  // Trouver les variables init
+  // Trouver les variables initialisées
   while ((match = variableRegex.exec(text))) {
     const variableName = match[1];
     initializedVariables.add(variableName);
@@ -47,7 +47,7 @@ export function checkVariableInitialization(
       continue;
     }
 
-    // Ignorer les déclarations de classe et les mots-clés comme int, void, etc.
+    // Ignorer les déclarations de classe et les mots-clés
     const keywords = [
       "class",
       "int",
@@ -70,6 +70,7 @@ export function checkVariableInitialization(
       "try",
       "catch",
       "finally",
+      "final",
     ];
     if (
       keywords.some((keyword) => line.startsWith(keyword)) ||
@@ -86,9 +87,14 @@ export function checkVariableInitialization(
       continue;
     }
 
-    let usedMatch;
+    let usedMatch: RegExpExecArray | null;
     while ((usedMatch = usedVariableRegex.exec(line))) {
-      const usedVariableName = usedMatch[1];
+      const usedVariableName = usedMatch[0];
+
+      // Vérifie si ce n'est pas un nombre
+      if (!isNaN(Number(usedVariableName))) {
+        continue; // Ignore si c'est un chiffre
+      }
 
       if (
         !initializedVariables.has(usedVariableName) &&
