@@ -3,7 +3,7 @@
   "displayName": "iJavaTurbo",
   "description": "Extension ijava pour les cours de dev",
   "version": "0.2.7",
-  "publisher": "Ilies",
+  "publisher": "Spartix",
   "engines": {
     "vscode": "^1.50.0"
   },
