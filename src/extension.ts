@@ -56,13 +56,14 @@ export function activate(context: vscode.ExtensionContext) {
   );
 
   // Diagnostic pour les erreurs lors des changements de texte dans le document
+  /*
   context.subscriptions.push(
     vscode.workspace.onDidChangeTextDocument((event) => {
       if (isJavaFile(event.document)) {
         updateDiagnostics(event.document);
       }
     })
-  );
+  )
 
   // Diagnostic lors de l'ouverture d'un nouveau document
   context.subscriptions.push(
@@ -79,6 +80,7 @@ export function activate(context: vscode.ExtensionContext) {
       updateDiagnostics(doc);
     }
   });
+  */
 
   // quand save add les ;
   context.subscriptions.push(

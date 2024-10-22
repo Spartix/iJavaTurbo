@@ -1,5 +1,7 @@
 import * as vscode from "vscode";
 
+// Le fournisseur de correction est a revoir entierement
+
 const diagnosticCollection =
   vscode.languages.createDiagnosticCollection("java");
 

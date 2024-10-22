@@ -10,7 +10,10 @@ export let disposableCompileAndRun = vscode.commands.registerCommand(
         vscode.window.activeTerminal || vscode.window.createTerminal();
       terminal.show();
       terminal.sendText(
-        `ijavac ${fileName} && ijava ${fileName.split(".").slice(0, -1)}`
+        `ijavac ${fileName} && ijava ${fileName
+          .split(".")
+          .slice(0, -1)
+          .join(".")}`
       );
     }
   }
