@@ -4,6 +4,7 @@
 - Affiche la signature des fonctions.
 - Permet de retourner à la définition d'une fonction créée par l'utilisateur.
 - Integration automatique des points virgules.
+- Surbrillance lors d'erreur de parentheses
 
 ## Raccourcis clavier
 
@@ -15,7 +16,7 @@
   _Note : Le nom de la classe doit correspondre au nom du fichier pour s'exécuter correctement !_
 
 - **Ctrl + Alt + C :**  
-  Exécute la commande définie dans le fichier `CustomCommand.json`.
+  Exécute la commande définie les parametres de l'extension.
 
   - `%file%` = nom du fichier
   - `%extend%` = extension du fichier

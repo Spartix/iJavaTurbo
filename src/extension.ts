@@ -11,6 +11,7 @@ import {
   updateDiagnostics,
 } from "./fournisseurs/Correction";
 import { addPoints } from "./fournisseurs/EndLines";
+import { brackClose } from "./fournisseurs/EntryPoints";
 
 export function activate(context: vscode.ExtensionContext) {
   const isJavaFile = (document: vscode.TextDocument) =>
@@ -44,6 +45,13 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(completionProvider);
   context.subscriptions.push(execCustomCommand);
   context.subscriptions.push(commentline);
+  context.subscriptions.push(
+    vscode.workspace.onDidSaveTextDocument((document) => {
+      if (isJavaFile(document)) {
+        brackClose(document);
+      }
+    })
+  );
   //vscode.window.showInformationMessage("iJava extension activated");
 
   context.subscriptions.push(

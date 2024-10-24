@@ -1,21 +1,32 @@
-class Pile {
-  value: "(" | ")" | "{" | "}" | undefined;
-  son: Pile | undefined;
+import { brackets } from "./Brack";
+export class Pile {
+  value: brackets | null;
+  son: Pile | null;
 
-  constructor(value: "(" | ")" | "{" | "}" | undefined, son: Pile | undefined) {
+  constructor(value: brackets | null = null, son: Pile | null = null) {
     this.value = value;
     this.son = son;
   }
-  add(value: "(" | ")" | "{" | "}"): Pile {
+  add(value: brackets): Pile {
     return new Pile(value, this);
   }
-  getLast() {
+  getLast(): brackets | null {
     return this.value;
   }
-  remove() {
-    if (!this.son) {
-      return new Pile(undefined, undefined);
+  remove(): Pile {
+    return this.son ? this.son : new Pile();
+  }
+  est_vide(): boolean {
+    return this.son == null;
+  }
+  print(): void {
+    let temp: Pile | null = this;
+    console.log("|   |");
+    while (temp && !temp.est_vide()) {
+      console.log("| " + temp.value + " |");
+      temp = temp.son;
     }
-    return this.son;
+    console.log(" ---");
+    console.log("\n\n");
   }
 }

@@ -3,7 +3,7 @@ export interface proutedefonctions {
   name: string;
   description: string;
   return: string;
-  args: Array<InterfaceArg>;
+  args: InterfaceArg[];
 }
 // Interface des arguments des fonctions
 export interface InterfaceArg {

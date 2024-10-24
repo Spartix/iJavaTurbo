@@ -1,3 +1,0 @@
-{
-  "commande": "ijavac %directory% && ijava %file% && echo code compile  executé avec succès."
-}
